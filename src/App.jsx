@@ -1,29 +1,32 @@
 import './App.css'
-import { ProductCard } from './components/productCard'
+import Header from './components/header.jsx'
+import { ProductCard } from './components/productCard.jsx'
+
 
 function App() {
   
 
   return (
-    <>
-      <ProductCard 
-      name="Laptop" 
-      price="100,000.00" 
-      image="https://techterms.com/img/xl/laptop_586.png"
-      /> 
 
-      <ProductCard 
-      name="Monitor" 
-      price="80,000.00" 
-      image="https://techterms.com/img/xl/laptop_586.png"
-      />
+    // To give a custom value use values inside [] brakets ex: <div className='w-[233] h-24 border bg-[#F54927]'>
+    <div className='w-[600px] h-[600px] border bg-gray-400 relative'>
+      
+      {/* to move a class or a division use flex class */}
+      <div className='w-[500px] h-[500px] border bg-yellow-100 flex flex-col justify-center items-center'>
+        <div className='w-[100px] h-[100px] bg-blue-600'>
 
-      <ProductCard 
-      name="Keyboard" 
-      price="10,000.00" 
-      image="https://techterms.com/img/xl/laptop_586.png"
-      />
-    </>
+        </div>
+
+        {/* use fixed to give a exact position to move */}
+        <div className='w-[100px] h-[100px] bg-red-600 fixed left-[550px] top-[550px]'></div>
+        <div className='w-[100px] h-[100px] bg-green-600'></div>
+
+        {/* absolute is different from fixed, fixed will move entire web interface but absolute only move the area inside relative  */}
+        <div className='w-[100px] h-[100px] bg-pink-600 absolute right-[100px] bottom-[100px]'></div>
+      </div>
+      
+     
+    </div>
   )
 }
 

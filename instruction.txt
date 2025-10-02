@@ -1,0 +1,12 @@
+1Use tailwin CSS(a css file that have predefine classes)
+    *go to this website https://tailwindcss.com/
+    *Paste this code in terminal "npm install tailwindcss @tailwindcss/vite"
+    *To import the package paste this line in vite.config.js import tailwindcss from '@tailwindcss/vite'
+    *And paste this code tailwindcss() inside this pluggin section "export default defineConfig({
+                                                                        plugins: [react(), tailwindcss()],
+                                                                        })"
+
+    *use this command to import tailwindcss "@import "tailwindcss";" into css file,so i import tailwindcss inside index.css file
+    *Next download Tailwind CSS IntelliSense extension
+    *To use tailwindcss use code like this , ex: "<div className='w-24 h-24 border bg-red-500'>"                                                              
+    *vite gives boilerplates use to build projects
