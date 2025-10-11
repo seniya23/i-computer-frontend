@@ -2,9 +2,9 @@ import UserData from "./userData";
 
 export default function Header(){
     return(
-    <header>
+    <header className="w-full h-[100px] bg-accent">
         <h1>My Shop</h1>
-        <UserData/>
+        
         </header>
     )
 }

@@ -1,32 +1,34 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Header from './components/header.jsx'
 import { ProductCard } from './components/productCard.jsx'
+import Test from './components/test..jsx';
+import HomePage from './pages/homePage.jsx';
+import LoginPage from './pages/loginPage.jsx';
+import RegisterPage from './pages/registerPage.jsx';
+import AdminPage from './pages/adminPage.jsx';
 
 
 function App() {
   
-
   return (
 
-    // To give a custom value use values inside [] brakets ex: <div className='w-[233] h-24 border bg-[#F54927]'>
-    <div className='w-[600px] h-[600px] border bg-gray-400 relative'>
+    // rap with browser router after install react-dom 
+    <BrowserRouter> 
       
-      {/* to move a class or a division use flex class */}
-      <div className='w-[500px] h-[500px] border bg-yellow-100 flex flex-col justify-center items-center'>
-        <div className='w-[100px] h-[100px] bg-blue-600'>
+      {/* here you need to give h-screen for hight beacuse it doesn't have another <div> to predict what is hight */}
+      <div className='w-full h-screen bg-primary text-secondary'>
 
-        </div>
+        <Routes path="/">
 
-        {/* use fixed to give a exact position to move */}
-        <div className='w-[100px] h-[100px] bg-red-600 fixed left-[550px] top-[550px]'></div>
-        <div className='w-[100px] h-[100px] bg-green-600'></div>
-
-        {/* absolute is different from fixed, fixed will move entire web interface but absolute only move the area inside relative  */}
-        <div className='w-[100px] h-[100px] bg-pink-600 absolute right-[100px] bottom-[100px]'></div>
+          <Route path='/' element={<HomePage/>}/>
+          <Route path='/login' element={<LoginPage/>}/>
+          <Route path='/register' element={<RegisterPage/>}/>
+          <Route path='/admin' element={<AdminPage/>}/>
+          
+        </Routes>
       </div>
-      
-     
-    </div>
+    </BrowserRouter>
   )
 }
 

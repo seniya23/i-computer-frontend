@@ -10,3 +10,12 @@
     *Next download Tailwind CSS IntelliSense extension
     *To use tailwindcss use code like this , ex: "<div className='w-24 h-24 border bg-red-500'>"                                                              
     *vite gives boilerplates use to build projects
+    *Templates for use design (material ui, shadcn, daisyui, heroui, magicui)
+    *react hook use for help to control attributes,components (useState, useEffect, useNavigate, useContext, useLocation).
+    *To enable router install "npm install react-router-dom"
+    *All images and videos are move to public folder
+    *When choose a color to a website you need to use 60% 30% 10% rule 10% color is the most uniqe color 
+    *To use many times primary colors and secondary colors you can move it into index.css there have a code to type , first go to this page link and https://tailwindcss.com/docs/theme copy this line @theme {
+    --color-mint-500: oklch(0.72 0.11 178);
+    } and paste it in index.css 
+

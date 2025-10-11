@@ -1,0 +1,24 @@
+Day 10-----------------------------------------------------------------------------------------------------------------------------------------------
+
+// To give a custom value use values inside [] brakets ex: <div className='w-[233] h-24 border bg-[#F54927]'>
+    <div className='w-[600px] h-[600px] border bg-gray-400 relative'>
+      
+      {/* to move a class or a division use flex class */}
+      <div className='w-[500px] h-[500px] border bg-yellow-100 flex flex-col justify-center items-center'>
+        <div className='w-[100px] h-[100px] bg-blue-600'>
+
+        </div>
+
+        {/* use fixed to give a exact position to move */}
+        <div className='w-[100px] h-[100px] bg-red-600 fixed left-[550px] top-[550px]'></div>
+        <div className='w-[100px] h-[100px] bg-green-600'></div>
+
+        {/* absolute is different from fixed, fixed will move entire web interface but absolute only move the area inside relative  */}
+        <div className='w-[100px] h-[100px] bg-pink-600 absolute right-[100px] bottom-[100px]'></div>
+      </div>
+      
+     
+    </div>
+
+    Day 11----------------------------------------------------------------------------------------------------------------------------------------------
+    *Using useState we have to provide two set of data, 1 is variable and 2 is function ex: const [count, setCount] = useState()
