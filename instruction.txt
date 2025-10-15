@@ -1,21 +1,56 @@
 1Use tailwin CSS(a css file that have predefine classes)
     *go to this website https://tailwindcss.com/
+
     *Paste this code in terminal "npm install tailwindcss @tailwindcss/vite"
+
     *To import the package paste this line in vite.config.js import tailwindcss from '@tailwindcss/vite'
+
     *And paste this code tailwindcss() inside this pluggin section "export default defineConfig({
                                                                         plugins: [react(), tailwindcss()],
                                                                         })"
 
     *use this command to import tailwindcss "@import "tailwindcss";" into css file,so i import tailwindcss inside index.css file
+
     *Next download Tailwind CSS IntelliSense extension
-    *To use tailwindcss use code like this , ex: "<div className='w-24 h-24 border bg-red-500'>"                                                              
+
+    *To use tailwindcss use code like this , ex: "<div className='w-24 h-24 border bg-red-500'>"    
+
     *vite gives boilerplates use to build projects
+
     *Templates for use design (material ui, shadcn, daisyui, heroui, magicui)
+
     *react hook use for help to control attributes,components (useState, useEffect, useNavigate, useContext, useLocation).
+
     *To enable router install "npm install react-router-dom"
+
     *All images and videos are move to public folder
+
     *When choose a color to a website you need to use 60% 30% 10% rule 10% color is the most uniqe color 
+
     *To use many times primary colors and secondary colors you can move it into index.css there have a code to type , first go to this page link and https://tailwindcss.com/docs/theme copy this line @theme {
     --color-mint-500: oklch(0.72 0.11 178);
     } and paste it in index.css 
+
+    *Use powertoy to much easier to use windows.
+
+    *To use tailwind css classes search on google like this "scrollbar color change in tailwind css" and the appearing code copy and paste inside the index.css file like this example that i used for scroll bar: "/* Define scrollbar width */
+        ::-webkit-scrollbar {
+            width: 8px; /* Adjust as needed */
+            }
+
+        /* Style the scrollbar track */
+        ::-webkit-scrollbar-track {
+                    background: transparent; /* Tailwind color */
+            }
+
+        /* Style the scrollbar thumb */
+        ::-webkit-scrollbar-thumb {
+                background: #31333d; /* Tailwind color */
+                border-radius: 4px; /* Optional: add rounded corners */
+            }"
+
+    *To get react icons go to this url https://react-icons.github.io/react-icons/,
+     To install this icon package type npm install react-icons, To use an icone go to the url and select icon what you need copy the import code display under the icon and paste it in the top of the page that you that want like this import 
+     { LuClipboardList } from "react-icons/lu"; and use the name inside {} and type that name inside the page like this <Link to="/admin"><LuClipboardList/>Orders</Link>
+
 

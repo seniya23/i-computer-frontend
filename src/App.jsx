@@ -7,6 +7,7 @@ import HomePage from './pages/homePage.jsx';
 import LoginPage from './pages/loginPage.jsx';
 import RegisterPage from './pages/registerPage.jsx';
 import AdminPage from './pages/adminPage.jsx';
+import TestPage from './pages/test.jsx';
 
 
 function App() {
@@ -19,12 +20,13 @@ function App() {
       {/* here you need to give h-screen for hight beacuse it doesn't have another <div> to predict what is hight */}
       <div className='w-full h-screen bg-primary text-secondary'>
 
-        <Routes path="/">
+        <Routes>
 
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/login' element={<LoginPage/>}/>
-          <Route path='/register' element={<RegisterPage/>}/>
-          <Route path='/admin' element={<AdminPage/>}/>
+          <Route path="/*" element={<HomePage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
+          <Route path="/register" element={<RegisterPage/>}/>
+          <Route path="/admin/*" element={<AdminPage/>}/>
+          <Route path="/test" element={<TestPage/>}/>
           
         </Routes>
       </div>

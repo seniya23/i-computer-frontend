@@ -3,5 +3,24 @@
 @theme {
   --color-primary: #F7FAFF;
   --color-secondary: #111827;
-  --color-accent: #2563EB;
+  --color-accent: #31333d;
 }
+
+/* Example using a custom utility class or in your main CSS */
+    
+/* Define scrollbar width */
+::-webkit-scrollbar {
+     width: 8px; /* Adjust as needed */
+    }
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+            background: transparent; /* Tailwind color */
+    }
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+        background: #888; /* Tailwind color */
+        border-radius: 4px; /* Optional: add rounded corners */
+    }
+    

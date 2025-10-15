@@ -22,3 +22,32 @@ Day 10--------------------------------------------------------------------------
 
     Day 11----------------------------------------------------------------------------------------------------------------------------------------------
     *Using useState we have to provide two set of data, 1 is variable and 2 is function ex: const [count, setCount] = useState()
+
+    Day 13-----------------------------------------------------------------------------------------------------------------------------------------------------
+    *using overflow-scroll you will get scroll bars horizontal and vertical,but using overflow-y-scroll you will only get horizontal scroll bar 
+
+    *To use tailwind css classes search on google like this "scrollbar color change in tailwind css" and the appearing code copy and paste inside the index.css file like this example that i used for scroll bar: "/* Define scrollbar width */
+        ::-webkit-scrollbar {
+            width: 8px; /* Adjust as needed */
+            }
+
+        /* Style the scrollbar track */
+        ::-webkit-scrollbar-track {
+                    background: transparent; /* Tailwind color */
+            }
+
+        /* Style the scrollbar thumb */
+        ::-webkit-scrollbar-thumb {
+                background: #31333d; /* Tailwind color */
+                border-radius: 4px; /* Optional: add rounded corners */
+            }"
+
+    *<div className="w-[600px] h-[600px] bg-red-600">
+            <div className="w-[100px] h-[100px] bg-green-600"></div>
+
+            {/* m-[30px] means div class use marging with around components and mb-[30px] means div class use marging with
+             bottom component, like these you can use ml-[30px] and mr-[30px] for left right */}
+            <div className="w-[100px] h-[100px] bg-blue-600 m-[30px] mb-[50px]"></div>
+            <div className="w-[100px] h-[100px] bg-yellow-500"></div>
+            <div className="w-[100px] h-[100px] bg-amber-950"></div>
+        </div>
