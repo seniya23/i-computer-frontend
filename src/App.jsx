@@ -8,6 +8,7 @@ import LoginPage from './pages/loginPage.jsx';
 import RegisterPage from './pages/registerPage.jsx';
 import AdminPage from './pages/adminPage.jsx';
 import TestPage from './pages/test.jsx';
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
     // rap with browser router after install react-dom 
     <BrowserRouter> 
+      <Toaster position='top-right'/>
       
       {/* here you need to give h-screen for hight beacuse it doesn't have another <div> to predict what is hight */}
       <div className='w-full h-screen bg-primary text-secondary'>

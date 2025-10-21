@@ -51,3 +51,28 @@ Day 10--------------------------------------------------------------------------
             <div className="w-[100px] h-[100px] bg-yellow-500"></div>
             <div className="w-[100px] h-[100px] bg-amber-950"></div>
         </div>
+
+    Day 14-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    * you can use object-cover if image looks like shrunk *
+            <img src="/logo.png" className="object-cover w-[200px] h-[200px] mb-[20px]" alt="logo" />
+
+    * bg-no-repeat use for not showing the same image again and again when scrolling down
+    <div className="w-full h-screen bg-[url('/bg.jpg')] bg-center bg-no-repeat flex">
+
+    * use backdrop-blur-lg for blur the div
+            <div className="w-[450px] h-[600px] backdrop-blur-lg shadow-2xl rounded-xl"></div>
+
+    *  focus:ring-2 is use for when type in input field the border will blow in another color with this code focus:ring-gold, so it uses for that blowing color border size , 
+       And focus:outline-none this means disable orginel outline when appearing colord outline
+                <input type="email" placeholder="Your email" className="w-full h-[50px] mb-[20px] rounded-lg border border-accent p-[10px] text-[20px] focus:outline-none focus:ring-2 focus:ring-gold"/>     
+
+    * onChange={(e) will get all the details in <input> , (e.target.value) is a function inside e(event) it has the details what the user have type in the input field
+                <input 
+                onChange={(e)=>{
+                    console.log(e.target.value);
+                    console.log("email changed")
+                }}  
+
+    *When accesing back-end thier have a policy to disable for do that type "npm install cors", Next "import cors from "cors" " and plug cors in the top of the prpject back-end file like this 
+    app.use(cors())            

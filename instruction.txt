@@ -1,4 +1,4 @@
-1Use tailwin CSS(a css file that have predefine classes)
+1.Use tailwin CSS(a css file that have predefine classes)
     *go to this website https://tailwindcss.com/
 
     *Paste this code in terminal "npm install tailwindcss @tailwindcss/vite"
@@ -15,25 +15,25 @@
 
     *To use tailwindcss use code like this , ex: "<div className='w-24 h-24 border bg-red-500'>"    
 
-    *vite gives boilerplates use to build projects
+2.vite gives boilerplates use to build projects
 
-    *Templates for use design (material ui, shadcn, daisyui, heroui, magicui)
+3.Templates for use design (material ui, shadcn, daisyui, heroui, magicui)
 
-    *react hook use for help to control attributes,components (useState, useEffect, useNavigate, useContext, useLocation).
+4.react hook use for help to control attributes,components (useState, useEffect, useNavigate, useContext, useLocation).
 
-    *To enable router install "npm install react-router-dom"
+5.To enable router install "npm install react-router-dom"
 
-    *All images and videos are move to public folder
+6.All images and videos are move to public folder
 
-    *When choose a color to a website you need to use 60% 30% 10% rule 10% color is the most uniqe color 
+7.When choose a color to a website you need to use 60% 30% 10% rule 10% color is the most uniqe color 
 
-    *To use many times primary colors and secondary colors you can move it into index.css there have a code to type , first go to this page link and https://tailwindcss.com/docs/theme copy this line @theme {
+8.To use many times primary colors and secondary colors you can move it into index.css there have a code to type , first go to this page link and https://tailwindcss.com/docs/theme copy this line @theme {
     --color-mint-500: oklch(0.72 0.11 178);
     } and paste it in index.css 
 
-    *Use powertoy to much easier to use windows.
+9.Use powertoy to much easier to use windows.
 
-    *To use tailwind css classes search on google like this "scrollbar color change in tailwind css" and the appearing code copy and paste inside the index.css file like this example that i used for scroll bar: "/* Define scrollbar width */
+10.To use tailwind css classes search on google like this "scrollbar color change in tailwind css" and the appearing code copy and paste inside the index.css file like this example that i used for scroll bar: "/* Define scrollbar width */
         ::-webkit-scrollbar {
             width: 8px; /* Adjust as needed */
             }
@@ -49,8 +49,45 @@
                 border-radius: 4px; /* Optional: add rounded corners */
             }"
 
-    *To get react icons go to this url https://react-icons.github.io/react-icons/,
+11.To get react icons go to this url https://react-icons.github.io/react-icons/,
      To install this icon package type npm install react-icons, To use an icone go to the url and select icon what you need copy the import code display under the icon and paste it in the top of the page that you that want like this import 
      { LuClipboardList } from "react-icons/lu"; and use the name inside {} and type that name inside the page like this <Link to="/admin"><LuClipboardList/>Orders</Link>
+
+12.Connect or send request frontend to backend need Axios library, To download that library type "npm install axios"
+
+13.To send request or respond to backend the address and the body needed in the request,
+        try{
+            const res = await axios.post("http://localhost:5000/login", {
+            email: email,
+            password : password
+        })
+
+14.When accesing back-end thier have a policy to disable for do that type "npm install cors", Next "import cors from "cors" " and plug cors in the top of the project back-end file like this 
+     app.use(cors()), these installations are doing in back-end project not in frot-end project, and you can change the request accepting from where it coming from ex: specific ip address
+
+15.In front-end we don't need to have install dotenv package, it have pre intall package, First create .env file in root folder and add " VITE_BACKEND_URL="http://localhost:5000/api" " your backend url, 
+     change loginpage.jsx file backend url this " await axios.post("http://localhost:500/api/users/login", " to this "await axios.post(import.meta.env.VITE_BACKEND_URL + "/users/login"", After that add .env to .gitignore file 
+
+16.To use modern error warning massage box in website use react-hot-toast https://react-hot-toast.com/ and go to documentation, Next install this package "npm install react-hot-toast",
+    *to import package got to App.jsx file and write tag <Toaster/> under BrowserRouter like this <BrowserRouter> 
+                                                                            <Toaster/>
+    *and you can change the position the dialog box need to appear, ex: " <Toaster position='top-right'/> " 
+    *Next you can use toast where you like to use ex : try{
+            const res = await axios.post(import.meta.env.VITE_BACKEND_URL + "/users/login", {
+            email: email,
+            password : password
+        })
+
+        console.log(res,data);
+
+        toast.success("Login successfull! Welcome back")
+
+        }catch (err){
+            toast.error("Login failed! Please check ypur credentials and try again")
+            console.log("Error during login:");
+            console.log(err);
+        }
+        
+              
 
 
