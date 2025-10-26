@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { data, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginPage(){
 
@@ -11,7 +11,7 @@ export default function LoginPage(){
     const navigate = useNavigate();
 
     async function login(){
-        console.log("log");
+        console.log("login button click");
         console.log("Email:", email);
         console.log("Password:", password);
 
@@ -21,7 +21,11 @@ export default function LoginPage(){
             password : password
         })
 
-        console.log(res,data);
+        console.log(res);
+            
+        // save the token in the localStorage(function that store data localy)coming from body of res.data 
+        localStorage.setItem("token", res.data.token); 
+        
 
         // if login credentials == admin got to adminPage , if not go to normal homePage
         if(res.data.role == "admin"){

@@ -75,4 +75,9 @@ Day 10--------------------------------------------------------------------------
                 }}  
 
     *When accesing back-end thier have a policy to disable for do that type "npm install cors", Next "import cors from "cors" " and plug cors in the top of the prpject back-end file like this 
-    app.use(cors())            
+    app.use(cors()) 
+
+    Day 15--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    * my-[20px] use for change the gap between two div classes     
+    * flex-wrap is items wrap to a new line or column when they run out of space       

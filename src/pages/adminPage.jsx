@@ -2,6 +2,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import { LuBox, LuBoxes, LuClipboardList } from "react-icons/lu";
 import { FiUsers } from "react-icons/fi";
 import { MdOutlineRateReview } from "react-icons/md";
+import AdminProductPage from "./admin/adminProductsPage";
+import AdminAddProductPage from "./admin/adminAddProductPaage";
 
 export default function AdminPage(){
 
@@ -14,7 +16,7 @@ export default function AdminPage(){
                 <h1 className="text-2xl">Admin </h1>
             </div>
 
-            <div  className="w-full h-[400px] text-white text-2xl flex flex-col">
+            <div  className="w-full h-[400px] text-white text-2xl flex flex-col pl-[20px] pt-[20px]">
                 
                 {/* use <Link> tag instid of usinkg <a href> becuase you can stop refreshing when moving among pages */}
                 <Link to="/admin" className="w-full flex items-center h-[50px] gap-[10px]"><LuClipboardList/>Orders</Link>
@@ -32,7 +34,8 @@ export default function AdminPage(){
         <div className="w-[calc(100%-300px)] bg-primary h-full max-h-full border-[10px] rounded-3xl border-accent overflow-y-scroll">
             <Routes>
                 <Route path="/" element={<h1>Orders</h1>}/>
-                <Route path="products" element={<h1>Products</h1>}/>
+                <Route path="products" element={<AdminProductPage/>}/>
+                <Route path="add-product" element={<AdminAddProductPage/>}/>
                 <Route path="users" element={<h1>Users</h1>}/>
                 <Route path="reviews" element={<h1>Reviews</h1>}/>
             </Routes>
