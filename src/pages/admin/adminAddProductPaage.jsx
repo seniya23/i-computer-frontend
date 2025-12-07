@@ -9,7 +9,7 @@ export default function AdminAddProductPage(){
     const [name, setName] = useState("");
     const [altNames, setAltNames] = useState("");
     const [description, setDescription] = useState("");
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState(0); //you can change this useState defualt value to this ("") , when it's changed in web application input field will change 0 to empty amount  
     const [labelledPrice, setLabelledPrice] = useState(0);
     const [images, setImages] = useState("")
     const [category, setCategory] = useState("");
@@ -35,7 +35,10 @@ export default function AdminAddProductPage(){
         }
 
         try{
-            // split(",") use beacuse user enter in input field like this ex: sdfdfsd, sdfdfds, sdfdsf , so you will get an array by splitting from (",") this
+            // split(",") use beacuse user enter in input field like this ex: sdfdfsd, sdfdfds, sdfdsf , but back-end model recive data as an array beacuse we create model like this ex: images : {
+                                                                                                                                                                                                //    type : [String],
+                                                                                                                                                                                                //    required : true , 
+            //So we have to covert this string  "sdfdfsd, sdfdfds, sdfdsf" to an array, using .split(",") it convert to an array ['sdfdfsd', 'sdfdfds', 'sdfdsf'] like this.
             const altNamesInArray = altNames.split(",")
             const imagesInArray = images.split(",")
             await axios.post(import.meta.env.VITE_BACKEND_URL + "/products/",{
@@ -99,7 +102,7 @@ export default function AdminAddProductPage(){
                         type="text"
                         value={altNames} 
                         onChange={(e)=>{setAltNames(e.target.value)}} className="w-full h-[40px] border border-accent shadow-2xl px-[20px] rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent"/>
-                        <p className="text-sm text-gray-500 w-full text-right">Seperate mmultiple names with commas</p>
+                        <p className="text-sm text-gray-500 w-full text-right">Seperate multiple names with commas</p>
                     </div>
 
                     <div className="my-[10px] w-full">
