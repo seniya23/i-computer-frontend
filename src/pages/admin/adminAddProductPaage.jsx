@@ -3,6 +3,7 @@ import { useState } from "react"
 import toast from "react-hot-toast";
 import { AiOutlineProduct } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import uploadFile from "../../utils/mediaUpload";
 
 export default function AdminAddProductPage(){
     const [productID, setProductID] = useState("");
@@ -11,7 +12,7 @@ export default function AdminAddProductPage(){
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState(0); //you can change this useState defualt value to this ("") , when it's changed in web application input field will change 0 to empty amount  
     const [labelledPrice, setLabelledPrice] = useState(0);
-    const [images, setImages] = useState("")
+    const [files, setFiles] = useState([])
     const [category, setCategory] = useState("");
     const [model, setModel] = useState("");
     const [brand, setBrand] = useState("");
@@ -22,13 +23,35 @@ export default function AdminAddProductPage(){
     //useNavigate hook is use here for navigate again to login page or a user page when unotherized credential try to add products
 
     async function addProduct() {
+        
         const token = localStorage.getItem("token");
         if(token == null){
             toast.error("You must be loged in as admin to add product");
             navigate("/login");
             return;
         }
+        console.log(files);
 
+        const imagePromises = []; //ee promise tika daganna array eka
+
+        // files.forEach((file) => {
+        //     const promises = uploadFile(File); //image files okkoma upload kerela dennm kiyena promise eka
+        //     imagePromises.push(promises); //imagePromises kiyena array ekata promise tika daganna line eka
+
+        // })
+
+        for(let i=0; i<files.length; i++){
+            const promise = uploadFile(files[i]);
+            imagePromises.push(promise);
+        }
+
+        const images = await Promise.all(imagePromises).catch((err)=>{ //promise tika resolve wenakota images kiyana array ekata public url tika gannawa
+            console.log("Error uploading images:", err);
+            toast.error("Error uploading images. Please try again.");
+            return;
+        }) 
+        console.log(images);
+            
         if(productID == "" || name == "" || description == "" || category == "" || brand == "" || model == ""){
             toast.error("Please fill all the required fields");
             return
@@ -37,10 +60,10 @@ export default function AdminAddProductPage(){
         try{
             // split(",") use beacuse user enter in input field like this ex: sdfdfsd, sdfdfds, sdfdsf , but back-end model recive data as an array beacuse we create model like this ex: images : {
                                                                                                                                                                                                 //    type : [String],
-                                                                                                                                                                                                //    required : true , 
+                                                                                                                                                                                          //    required : true , 
             //So we have to covert this string  "sdfdfsd, sdfdfds, sdfdsf" to an array, using .split(",") it convert to an array ['sdfdfsd', 'sdfdfds', 'sdfdsf'] like this.
             const altNamesInArray = altNames.split(",")
-            const imagesInArray = images.split(",")
+            // const imagesInArray = images.split(",")
             await axios.post(import.meta.env.VITE_BACKEND_URL + "/products/",{
                 productID : productID,
                 name : name,
@@ -48,7 +71,7 @@ export default function AdminAddProductPage(){
                 description : description,
                 price : price,
                 labelledPrice : labelledPrice,
-                images : imagesInArray,
+                images : images,
                 category : category,
                 brand : brand,
                 model : model,
@@ -138,9 +161,12 @@ export default function AdminAddProductPage(){
                     <div className="my-[10px] w-full">
                         <label>Images</label>
                         <input 
-                        type="text"
-                        value={images} 
-                        onChange={(e)=>{setImages(e.target.value)}} className="w-full h-[40px] border border-accent shadow-2xl px-[20px] rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent"/>
+                        type="file" 
+                        multiple = {true} //to select multiple files
+                        onChange={(e)=>{
+                            setFiles(e.target.files);
+                            }} 
+                            className="w-full h-[40px] border border-accent shadow-2xl px-[20px] rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent"/>
                     </div>
 
 					<div className="my-[10px] flex flex-col w-[30%]">

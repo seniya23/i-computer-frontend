@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import { BiPlus } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import Loader from "../../components/loader";
+import ProductDeleteButton from "../../components/productDeleteButton.jsx";
+
 
 
 
@@ -88,26 +89,8 @@ export default function AdminProductPage(){
               <td className="px-4 py-3 text-sm">
 										{/* placeholder cell for future actions; styled for consistency */}
 										<div className="inline-flex items-center gap-2 ">
-                      <button 
-                      onClick = {()=>{
-                        const token = localStorage.getItem("token");
-                        axios.delete(import.meta.env.VITE_BACKEND_URL + "/products/" + item.productID, {
-                          headers: {
-                            Authorization: `Bearer ${token}`
-                          }
-                        })
-                        .then(()=>{
-                          toast.success("Product deleted successfully!");
-                          setLoaded(false); // this where we change the value in loaded dependancy array, so it will run the function inside useEffect
-                          
-                        })
-                        .catch((error)=>{
-                          console.error("There was an error deleting the product!", error);
-                        });
-                      }}
-                      className="w-[100px] bg-red-500 flex justify-center items-center text-white p-2 rounded-lg cursor-pointer hover:bg-red-700">
-												Delete
-											</button>
+                      <ProductDeleteButton productid = {item.productID} reload={()=>{setLoaded(false)}}/> 
+                        {/* productid and reload pass as props to the productDeleteButton */}
                     </div>
               
               </td>
@@ -121,8 +104,8 @@ export default function AdminProductPage(){
     {/* Floating Add Button */}
     <Link to="/admin/add-product"
       className="fixed right-6 bottom-6 w-[55px] h-[55px] flex justify-center items-center 
-                 text-5xl border-2 rounded-full text-gold border-gold
-                 bg-white shadow-lg hover:bg-gold hover:text-white 
+                 text-5xl border-2 rounded-full text-white border-accent
+                 bg-accent shadow-lg hover:bg-white hover:text-accent 
                  transition-all duration-300 hover:shadow-xl">
       <BiPlus />
     </Link>

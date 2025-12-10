@@ -87,6 +87,11 @@
             console.log("Error during login:");
             console.log(err);
         }
+
+16. *To store images use supabase, first create an organization and a  project , next go to storage tab and create a new bucket,next enable option public bucket and create.next click the bucket and go to policies tab , click new policy 
+    click for full customization and enter a policy name ex:key and allow(click) all operations and click review and click save policy. Next go to project setting and go to data api tab, and copy the given url, next go to Legacy anon, service_role API keys tab
+    and copy anon public key. 
+    *Next step is to install library to  the project for that run "npm install @supabase/supabase-js"  after installation need to create file input
         
               
 
