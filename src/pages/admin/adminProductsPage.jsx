@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BiPlus } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loader from "../../components/loader";
 import ProductDeleteButton from "../../components/productDeleteButton.jsx";
 
@@ -13,6 +13,7 @@ export default function AdminProductPage(){
   //Saren sare wenas wene agayak  pennaganna web page useState react hook use kerenewa
   const [products,setProducts] =  useState([]);  //products eka array ekak widiyata thiyenawa setProducts eka function ekak widiyata thiyenawa
   const [loaded, setLoaded] = useState(false); // to track if products have been loaded this is use the page won't refresh after product deleted and also modifiide the useEffect to depend on loaded state
+  const navigate = useNavigate();
 
   useEffect(()=>{    //lamda function eka athule eka sarayak run wenna one todo eka dala ita passe aniwaryenma empty array ekak danna one , nattan ayyth web eka refresh wewi ekama deyak run wenawa 
     if (!loaded) {
@@ -55,7 +56,8 @@ export default function AdminProductPage(){
             <th className="py-4 px-3">Model</th>
             <th className="py-4 px-3">Stock</th>
             <th className="py-4 px-3">Availability</th>
-            <th className="py-4 px-3">Actions</th>
+            <th colSpan={2} className="py-4 px-3 text-center">Actions</th>
+            
           </tr>
         </thead>
 
@@ -85,6 +87,22 @@ export default function AdminProductPage(){
                 }`}
               >
                 {item.isAvailable ? "In Stock" : "Out of Stock"}
+              </td>
+              <td className="px-4 py-3 text-sm">
+                  
+										<div className="inline-flex items-center gap-2 ">
+                      <button onClick={()=>{
+                        navigate("/admin/update-product", {state: item});
+                      }} className="bg-yellow-500 hover:bg-yellow-700 text-white py-2 px-4 rounded">
+                        Update
+                      </button>
+                      {/* oonanam palleha widihath use karanna puluwan */}
+                      {/* <Link 
+                      to="/admin/update-product" 
+                      className="bg-yellow-500 hover:bg-yellow-700 text-white py-2 px-4 rounded"
+                      state={item}
+                      >Update</Link> */}
+                    </div>
               </td>
               <td className="px-4 py-3 text-sm">
 										{/* placeholder cell for future actions; styled for consistency */}
