@@ -33,6 +33,7 @@ export default function CheckoutPage() {
 			return;
 		}
 
+        //prepare order items
 		const orderItems = [];
 
 		cart.forEach((item) => {

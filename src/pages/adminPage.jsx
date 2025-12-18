@@ -5,6 +5,7 @@ import { MdOutlineRateReview } from "react-icons/md";
 import AdminProductPage from "./admin/adminProductsPage";
 import AdminAddProductPage from "./admin/adminAddProductPage";
 import AdminUpdateProductPage from "./admin/adminUpdateProductPage";
+import AdminOrdersPage from "./admin/adminOrdersPage.jsx";
 
 export default function AdminPage(){
 
@@ -34,7 +35,7 @@ export default function AdminPage(){
          depend on monitor size but using this method soleve that problem */}
         <div className="w-[calc(100%-300px)] bg-primary h-full max-h-full border-[10px] rounded-3xl border-accent overflow-y-scroll">
             <Routes>
-                <Route path="/" element={<h1>Orders</h1>}/>
+                <Route path="/" element={<AdminOrdersPage/>}/>
                 <Route path="products" element={<AdminProductPage/>}/>
                 <Route path="add-product" element={<AdminAddProductPage/>}/>
                 <Route path="users" element={<h1>Users</h1>}/>
