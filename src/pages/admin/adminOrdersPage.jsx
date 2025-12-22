@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Loader from "../../components/loader";
-//import ViewOrderInfo from "../../components/viewOrderInfo";
+import ViewOrderInfo from "../../components/viewOrderInfo";
 
 export default function AdminOrdersPage() {
 	const [orders, setOrders] = useState([]);
@@ -88,7 +88,7 @@ export default function AdminOrdersPage() {
                                         LKR. {order.total.toFixed(2)}
                                     </td>
                                     <td className="px-4 py-3 text-sm font-medium text-secondary/90">
-										{/* <ViewOrderInfo order={order} /> */}
+										<ViewOrderInfo order={order} />
                                     </td>
 									
 								</tr>

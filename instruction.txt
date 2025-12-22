@@ -88,10 +88,21 @@
             console.log(err);
         }
 
-16. *To store images use supabase, first create an organization and a  project , next go to storage tab and create a new bucket,next enable option public bucket and create.next click the bucket and go to policies tab , click new policy 
+17. *To store images use supabase, first create an organization and a  project , next go to storage tab and create a new bucket,next enable option public bucket and create.next click the bucket and go to policies tab , click new policy 
     click for full customization and enter a policy name ex:key and allow(click) all operations and click review and click save policy. Next go to project setting and go to data api tab, and copy the given url, next go to Legacy anon, service_role API keys tab
     and copy anon public key. 
     *Next step is to install library to  the project for that run "npm install @supabase/supabase-js"  after installation need to create file input
+
+18. *To use pop-up windows go to https://www.npmjs.com/package/react-modal and install npm "install --save react-modal", after install package write this code "const [isModalOpen, setIsModalOpen] = useState(false);" to open modal , 
+    *Next import "import Modal from "react-modal";" , 
+    *Next write this code <Modal
+    isOpen={isModalOpen}
+				onRequestClose={() => setIsModalOpen(false)}
+				ariaHideApp={false}
+				overlayClassName="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
+				className="w-full max-w-3xl mx-4 bg-primary rounded-2xl shadow-2xl outline-none"
+			
+    ></Modal> You can write the content need to be inside the pop-up window in this <Modal> tag  
         
               
 

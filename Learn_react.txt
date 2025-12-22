@@ -81,3 +81,24 @@ Day 10--------------------------------------------------------------------------
 
     * my-[20px] use for change the gap between two div classes     
     * flex-wrap is items wrap to a new line or column when they run out of space       
+
+    Day 21---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    * Concept of mobile responsive,
+
+        Breakpoint prefix	Minimum width	CSS
+        sm	40rem (640px)	@media (width >= 40rem) { ... }
+        md	48rem (768px)	@media (width >= 48rem) { ... }
+        lg	64rem (1024px)	@media (width >= 64rem) { ... }
+        xl	80rem (1280px)	@media (width >= 80rem) { ... }
+        2xl	96rem (1536px)	@media (width >= 96rem) { ... } 
+
+    *These are the pixel sizes for each divices , it means sm(small devices) from 640px upto unlimited px it will support , md(medium devices) from 768px upto unlimited px it will support like wise other etc.
+    *So the concept is in here if you want add some specific features only for mobile then you have to use "sm" but it will apply for laptop screen also, for declare that you have to add specific features only for the laptop screen then you have to use "lg" .
+    *As an example <div className"w-full h-full bg-red-900 lg:bg-green-900"> this means upto lg px size the background color is red, from lg px size it convert the bg color to green  
+
+    Day 22-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    *" left-[-250px] transform-flat translate-x-[250px] " This code is related to side bar menue in mobile responsive , Methana -250px kiyanne application window eken eliye inne eekiyanne side bar eka eliye thamay place kerela thiyenne.
+    *translate-x-250px kiyanne x akshaya osse 250px application window eke athulata awith display wenne one kiyela, ekay side bar menu eka click kerema 250px athulata menue eka display enne , api ee menue icon eka click kerenekan side bar manue eka -250px eekiyanne application window eken eliye place wela thiyenne.
+    *"transform-flat transition-transform duration-1000" Meke transform-flat eken transition eka wada keranna one widihath transition-transform duration-1000 eken transition eke duration eka control kerenewa
