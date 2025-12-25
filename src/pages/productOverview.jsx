@@ -35,7 +35,9 @@ export default function ProductOverview() {
 			)}
 			{status == "success" && (
 				<div className="w-full h-[calc(100vh-100px)] flex flex-col lg:flex-row">
-					<h1 className="text-4xl font-semibold lg:hidden text-center sticky top-0 bg-white">
+					
+					{/* sticky top-0 means when scrolling the page this element will stick to the top of the viewport */}
+					<h1 className="text-4xl font-semibold lg:hidden text-center sticky top-0 bg-white"> 
 						{product.name}
 					</h1>
 

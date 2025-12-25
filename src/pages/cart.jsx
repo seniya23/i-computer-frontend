@@ -14,6 +14,7 @@ export default function CartPage() {
 						key={index}
 						className="w-full lg:w-[50%] pt-[20px] relative lg:h-[150px] rounded-xl overflow-hidden shadow-2xl my-1 flex justify-between"
 					>
+						{/* for mobile view show item name on top of the image */}
 						<h1 className="lg:hidden w-full overflow-hidden h-[20px] absolute top-[0px]">
 							{item.name}
 						</h1>
@@ -31,6 +32,8 @@ export default function CartPage() {
 								LKR. {item.price.toFixed(2)}
 							</h2>
 						</div>
+						
+						{/* for large screen show item name next to the image */}
 						<div className=" hidden lg:flex flex-col justify-center pl-4 w-[300px]">
 							<h1 className="text-2xl font-semibold relative hover:[&_.tooltip]:opacity-100">
 								<span className="opacity-0 tooltip italic text-sm absolute bottom-[-50px] bg-accent text-white p-2 rounded-lg">

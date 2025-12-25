@@ -6,12 +6,39 @@ import AdminProductPage from "./admin/adminProductsPage";
 import AdminAddProductPage from "./admin/adminAddProductPage";
 import AdminUpdateProductPage from "./admin/adminUpdateProductPage";
 import AdminOrdersPage from "./admin/adminOrdersPage.jsx";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Loader from "../components/loader.jsx";
 
 export default function AdminPage(){
+    const [user, setUser] = useState(null);
+
+    useEffect(()=>{                                                //me reacthook eka use karanne page eka load weddi user ge data genna ganna
+        const token = localStorage.getItem("token");
+        if(token == null){
+            window.location.href = "/";
+            return;
+        }
+        axios.get(import.meta.env.VITE_BACKEND_URL + "/users/", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }).then((response)=>{
+            if(response.data.role == "admin"){
+                setUser(response.data);
+            }else{
+                window.location.href = "/";
+            }
+        }).catch(()=>{
+            window.location.href = "/login";
+        })
+    },[])
 
     return(
     
     <div  className="w-full h-full flex bg-accent">
+        {user ?  //sagalawarahan welin user wrap kerela thiyenne, if user data eka thiyenawanam(null nemenam) admin page eka display karanawa
+        <>
         <div  className="w-[300px] h-full bg-accent">
             <div  className="w-full h-[100px] text-primary flex items-center">
                 <img src="/logo.png" className="h-full"/>
@@ -44,6 +71,9 @@ export default function AdminPage(){
             </Routes>
             
         </div>
+        </>:<Loader/> //if user data eka load wenne nathnam loader eka pennanawa
+}
+        
 
     </div>
     )

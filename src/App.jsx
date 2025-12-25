@@ -9,13 +9,17 @@ import RegisterPage from './pages/registerPage.jsx';
 import AdminPage from './pages/adminPage.jsx';
 import TestPage from './pages/test.jsx';
 import { Toaster } from 'react-hot-toast';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
+//
 
 function App() {
   
   return (
 
     // rap with browser router after install react-dom 
+    //rap with GoogleOAuthProvider after install @react-oauth/google
+    <GoogleOAuthProvider clientId="273151736436-np878lrc4q8btrkdaboj5785i5k91fn8.apps.googleusercontent.com">
     <BrowserRouter> 
       <Toaster position='top-right'/>
       
@@ -33,6 +37,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
+    </GoogleOAuthProvider>
   )
 }
 

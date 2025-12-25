@@ -103,6 +103,28 @@
 				className="w-full max-w-3xl mx-4 bg-primary rounded-2xl shadow-2xl outline-none"
 			
     ></Modal> You can write the content need to be inside the pop-up window in this <Modal> tag  
+
+19. *To create google login first go to console.cloud.google.com, Next create a new project and select the new created project and got to api and services tab.
+    *Next part is to create user agreement(pop up window that display to user to click some user agreements), To do that go to OAuth consent agreement tab, click get started
+    *Next give an app name and user support email. Next click Audience for External, Give Contact information(give a google account), Finally click agreemant and click finish as the first step.  
+    *Next go to Data access tab and go to add or remove scopes, click userinfo.email , userinfo.profile, openid click update button after selectings. Make sure to save data access.
+    *Next go to Clients tab, and create client, This part is we are using for google login, Select application type web application , keep name to default name, Under the Authorised JavaScript origins and Authorised redirect URIs(request kerana ulr deka) add url http://localhost and http://localhost:5173 (this url needs to change after hostings).
+    *Next copy the client ID from the pop-up menue after creating 
+    *Next we have to install package, to do that go to this react google login (https://www.npmjs.com/package/@react-oauth/google) and run this code on terminal npm install @react-oauth/google@latest
+    *And wrap App.jsx with <GoogleOAuthProvider clientId="<your_client_id>">...</GoogleOAuthProvider> and paste given client id in clientID="".
+    *Use this react hook , 
+    import { useGoogleLogin } from '@react-oauth/google';
+
+    const login = useGoogleLogin({
+    onSuccess: tokenResponse => console.log(tokenResponse),
+    });
+
+    <MyCustomButton onClick={() => login()}>Sign in with Google 🚀</MyCustomButton>;
+    *install axios to backend
+
+
+
+  
         
               
 

@@ -67,7 +67,7 @@ export default function Header() {
 									About
 								</a>
 								<div className=" flex justify-center bg-accent p-2 rounded-full">
-									<UserData />
+									<UserData/>
 								</div>
 							</div>
 						</div>
