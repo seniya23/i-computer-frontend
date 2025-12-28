@@ -30,6 +30,7 @@ export default function LoginPage(){
 				setIsLoading(false);
 			}).catch((err) => {
 				console.log(err);
+                toast.error("Google Login Failed");
 			});
 			setIsLoading(false);
             }, 
@@ -69,7 +70,7 @@ export default function LoginPage(){
         setIsLoading(false);
 
         }catch (err){
-            toast.error("Login failed! Please check ypur credentials and try again")
+            toast.error("Login failed! Please check your credentials and try again")
             console.log("Error during login:");
             console.log(err);
             setIsLoading(false);

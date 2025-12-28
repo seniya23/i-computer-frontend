@@ -25,6 +25,7 @@ export default function UserData(){     //userwa load keregannawa
             {
                 user?
                 <div className="w-[150px] flex flex-row">
+                    {/* referrerPolicy="no-referrer" is used to show images from backend server which requires authentication */}
                     <img src={user.image} referrerPolicy="no-referrer" className="w-[50px] rounded-full h-[50px]"/>
                     <select className="bg-transparent outline-none ml-2 mt- text-white" value={selectedOption}
                      onChange={
