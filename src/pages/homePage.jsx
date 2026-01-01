@@ -5,6 +5,7 @@ import ProductOverviewPage from "./productOverview.jsx";
 import Cart from "./cart.jsx";
 import CheckoutPage from "./checkOutPage.jsx";
 import OrdersPage from "./ordersPage.jsx";
+import Home from "./homeContent.jsx";
 
 export default function HomePage(){
 
@@ -13,7 +14,7 @@ export default function HomePage(){
             <Header/>
             <div className="w-full min-h-[calc(100%-100px)]">
                 <Routes>
-                    <Route path="/" element={<h1>Home Page</h1>}/>
+                    <Route path="/" element={<Home/>}/>
                     <Route path="/products" element={<ProductPage/>}/>
                     <Route path="/overview/:productID" element={<ProductOverviewPage/>}/>
                     <Route path="/cart" element={<Cart/>}/>

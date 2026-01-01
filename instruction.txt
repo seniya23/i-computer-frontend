@@ -122,6 +122,29 @@
     <MyCustomButton onClick={() => login()}>Sign in with Google 🚀</MyCustomButton>;
     *install axios to backend
 
+20. *Now we have to host the site, first we hosting back-end , for that go to this render page render.com, use github for login, Next click add new button and select web service,
+    *Next Select public git repository and paste git hub back end repository cloning ulr click connect button,
+    *Next select free tire plan, Next Environment Variables you have to copy paste all the .env Variables. To do that select all variables in back-end .env file and paste in Environment variable input field, Next click Deploy web service button.
+    *After indicate with green Live You can check buy applying backend ulr to frontend , Replace this "http://localhost:5000/api" with this https://i-computer-backend-ig1j.onrender.com
+    *If you are change anything in the code after commit render site top right corner there have button call manual deployment select that and select "Deploy latest commit".
+
+21. *Now we need to host fron-end to do that we use vercel.com. Click add new and click project, Connect github to vercel, now you can see the all the repos in your github. Search the repo and click import button.
+    *Bottom of the appeared form you will see Environment variables. copy and paste your .env links in front-end.
+    *After congratulation massage click continue to dashboard button. You can change url name buy change the repo name now the url visible like this "i-computer-frontend-bay.vercel.app"       
+
+22. *Now you have face to a problem that you can't access infolder pages from a direct link ex: https://i-computer-frontend-bay.vercel.app/products. for resolve this problem create a file name vercel.json in root folder in front-end.
+    *Copy and paste this code into file, {
+        "rewrites": [
+            {
+            "source": "/(.*)",
+            "destination": "/index.html"
+            }
+        ]
+        }
+
+    *This means user have to go home page and index.html first if he comes any other sources.
+    *After deploy this to github you can see in vercel queued trying to ready the hosting , this means ci/cd pipeline.
+
 
 
   
