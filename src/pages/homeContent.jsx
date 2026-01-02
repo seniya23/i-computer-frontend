@@ -34,7 +34,7 @@ export default function Home() {
         {/* Left: Hero copy */}
         <div className="w-full text-center md:w-1/2 md:text-left space-y-6">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
-            Isuri Technologies
+            Icomputers Technologies
           </p>
 
           <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
@@ -77,7 +77,7 @@ export default function Home() {
             </div>
             <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md">
               <p className="text-xs uppercase tracking-wide text-cyan-300">
-                Repairs, Upgrades and Guidance
+                Repairs &Upgrades
               </p>
               <p className="mt-1 text-sm font-semibold">Diagnostics, SSD, RAM & more</p>
             </div>
