@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import Loader from "../components/loader";
 import ImageSlider from "../components/imageSlider";
-import { CgChevronRight } from "react-icons/cg";
 import { addToCart } from "../utils/cart";
 
 export default function ProductOverview() {
