@@ -145,6 +145,12 @@
     *This means user have to go home page and index.html first if he comes any other sources.
     *After deploy this to github you can see in vercel queued and  trying to ready the hosting in deployment tab , this means ci/cd pipeline.
 
+24. *In github branching you have to first create new branches in github, then come to vscode buttom left corner select git sign and change it to you created github branch(all branches name will display in top of the window).
+    *Next change or developed and commit those changes to that branch . to apply changes to the main branch go to the github and select pull request tab, click create new pull request button and select to wich branch from which branch the changes will need to done.
+    *Select create pull request and give a description about your changes click create pull request button.
+    *After that selecting merge pull request button changes had apply to your source branch (dev branch(not main branch)). if you want to apply those changes to main branch do the same steps as in the above.
+    *In vercel you can see ci/cd pipline changes in Deployment. There you can see a current name tag. that's the one users can see , other deployment changes will not see till apply merge changes to main branch.  
+
 
 
   
