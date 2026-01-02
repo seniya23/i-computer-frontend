@@ -1,5 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { LuBox, LuBoxes, LuClipboardList } from "react-icons/lu";
+import { LuBoxes, LuClipboardList } from "react-icons/lu";
 import { FiUsers } from "react-icons/fi";
 import { MdOutlineRateReview } from "react-icons/md";
 import AdminProductPage from "./admin/adminProductsPage";
