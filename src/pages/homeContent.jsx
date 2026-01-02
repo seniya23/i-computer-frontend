@@ -142,7 +142,7 @@ export default function Home() {
                   to="/contact"
                   className="underline-offset-2 hover:underline text-cyan-300"
                 >
-                  Talk to our team
+                  24H support response
                 </Link>
                 <span className="text-slate-400">•</span>
                 <Link
