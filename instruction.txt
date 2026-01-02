@@ -143,7 +143,9 @@
         }
 
     *This means user have to go home page and index.html first if he comes any other sources.
-    *After deploy this to github you can see in vercel queued and  trying to ready the hosting in deployment tab , this means ci/cd pipeline.
+    *After deploy this to github you can see in vercel queued and  trying to ready the hosting in deployments tab , this means ci/cd pipeline.
+
+23. *After divide the branches make sure to refresh bottom left git button in vs code to apply changes.
 
 
 
