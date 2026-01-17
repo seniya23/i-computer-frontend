@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function CartPage() {
 	const [cart, setCart] = useState(getCart());
+	
 
 	return (
 		<div className="w-full flex flex-col items-center p-[20px]">

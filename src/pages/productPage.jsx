@@ -15,11 +15,11 @@ export default function ProductPage(){
 				.get(import.meta.env.VITE_BACKEND_URL + "/products")
 				.then((response) => {
 					console.log(response.data);
-					setProducts(response.data);
-					setLoaded(true);
+					setProducts(response.data); //Saves products into React state
+					setLoaded(true); //Marks that data is loaded (prevents re-fetching)
 				});
 		}
-	}, []);
+	}, []); // React checks the dependency array, If it’s empty → nothing to watch, So React runs the effect only on the first render, It never runs again
 
 	return (
         
@@ -63,7 +63,8 @@ export default function ProductPage(){
 
 					{products.map((item) => {
                         return (
-                            <ProductCard key={item.productID} product={item}/>
+                            <ProductCard key={item.productID} product={item}/> //key is using for react to say “This element is the same one as before”, so it can match old items with new items correctly, won't rendering the same item,
+																				//And always trying to use unique value for key (like productID, orderID, userID...), if dosent have one use index.
                         );
                     })}
                 </div>
@@ -73,3 +74,9 @@ export default function ProductPage(){
     );
                 
 }
+
+//const [products, setProducts] = useState([]);
+
+//product → current value of the state
+//setProducts → function to update that value
+//useState → starting value

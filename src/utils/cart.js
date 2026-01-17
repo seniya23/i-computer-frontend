@@ -29,7 +29,9 @@ export function getCart(){
         return []
     }else{
         const cart = JSON.parse(cartString); // if have a cart parse(convert) it to json
+        console.log(cart);
         return cart;
+        
     }
 }
 

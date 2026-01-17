@@ -8,6 +8,7 @@ export default function OrdersPage() {
 	const [loaded, setLoaded] = useState(false);
 
 	useEffect(() => {
+		console.log(orders)
         const token = localStorage.getItem("token");
 		if (!loaded) {
 			axios
@@ -17,7 +18,7 @@ export default function OrdersPage() {
                     }
                 })
 				.then((response) => {
-					console.log(response.data);
+					// console.log(response.data);
 					setOrders(response.data);
 					setLoaded(true);
 				});
@@ -103,3 +104,17 @@ export default function OrdersPage() {
 		</div>
 	);
 }
+
+
+// Difference between [] and [loaded] in useEffect dependency array:
+// - []: The effect runs only once after the initial render.(products tika kohomath home page eke render kerannna one nisa empty array ekak use kerenewa, 
+// 														 ethekota react eka check keraddi empty array ekak nam thiyenne useEffect eka ekasarayak run kerenewa)
+
+// - [loaded]: The effect runs after the initial render and whenever 'loaded' changes.(orders page eke orders pennanne log una user kenekta GiWavyItinerary,
+// 														 							ethekota loaded variable eka change wenakota useEffect eka run wenawa, 
+// 																					ayth if(!loaded) eka check keraddi false mokakda palaweni sare useEffect eka run keraddi 
+// 																					setLoaded(true) keregannawa ethenin ehata useEffect eka wadakeranne na stop wenewa.
+
+// 		loaded = false (React always runs useEffect once when the page loads.) -> if (!loaded) // true (API call happens) -> setLoaded(true);(API finishes) -> 
+// 		loaded = true (“Oh! loaded changed — I must run useEffect again.”) -> if (!loaded) // false (useEffect runs again, API is NOT called, because loaded is true now, And that’s the end.)																			
+// )

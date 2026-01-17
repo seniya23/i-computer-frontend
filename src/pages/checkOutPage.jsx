@@ -118,6 +118,7 @@ export default function CheckoutPage() {
 										//cart ekedi item add kerenewanam quantity ekata ekak add kerenawa
 										const copiedCart = [...cart]; // shallow copy ekak hadanawa cart eke
 										copiedCart[index].quantity += 1;
+										console.log(copiedCart);
 										setCart(copiedCart);
 									}}
 									className="text-2xl cursor-pointer hover:text-accent transition"

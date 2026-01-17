@@ -11,7 +11,8 @@ export default function ProductOverview() {
 	const params = useParams();
 	const [product, setProduct] = useState(null);
 	const [status, setStatus] = useState("loading"); //loading, error, success
-
+	
+	
 	useEffect(() => {
 		if (status == "loading") {
 			axios
