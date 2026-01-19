@@ -18,6 +18,7 @@ export default function ProductPage(){
 					setProducts(response.data); //Saves products into React state
 					setLoaded(true); //Marks that data is loaded (prevents re-fetching)
 				});
+				
 		}
 	}, []); // React checks the dependency array, If it’s empty → nothing to watch, So React runs the effect only on the first render, It never runs again
 

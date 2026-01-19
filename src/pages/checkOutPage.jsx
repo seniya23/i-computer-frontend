@@ -12,7 +12,7 @@ export default function CheckoutPage() {
 	const [phone, setPhone] = useState("");
 	const [cart, setCart] = useState(location.state);
 
-	if (location.state == null) { //read keranna data eka nathnam product page eken redirect karanawa
+	if (location.state == null) { //read keranna data eka nathnam product page ekata redirect karanawa
 		navigate("/products");
 	}
 
@@ -26,7 +26,6 @@ export default function CheckoutPage() {
 
 	function submitOrder() {
 		const token = localStorage.getItem("token");
-		console.log(token);
 		if (token == null) {
 			toast.error("You must be logged in to place an order");
 			navigate("/login");

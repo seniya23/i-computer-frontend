@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import Loader from "../components/loader";
 import ImageSlider from "../components/imageSlider";
-import { addToCart } from "../utils/cart";
+//import { addToCart } from "../utils/cart";
 
 export default function ProductOverview() {
 	const navigate = useNavigate();
@@ -25,8 +25,33 @@ export default function ProductOverview() {
 					toast.error("Product Not Found");
 					setStatus("error");
 				});
+				
 		}
 	}, []);
+
+	function addToCart() {
+		const token = localStorage.getItem("token");
+		if (token == null) {
+		toast.error("You must be logged in to add to cart");
+		navigate("/login");
+		return;
+			}
+			axios.put(import.meta.env.VITE_BACKEND_URL + "/carts", {
+				productID: product.productID,
+				quantity: 1
+				}, {
+				headers: {
+				Authorization: `Bearer ${token}`
+				}
+			})
+				.then(() => {
+				toast.success("Added to cart");
+				})
+				.catch(() => {
+				toast.error("Failed to add to cart");
+				});
+	}
+	
 	return (
 		<>
 			{status == "loading" && <Loader />}
@@ -74,7 +99,8 @@ export default function ProductOverview() {
 						<div className="w-full flex flex-row gap-4 mt-4">
 							<button
 								onClick={()=>{
-									addToCart(product,1);
+									addToCart();
+									
 								}}
 								className="bg-accent text-white px-6 py-3 rounded hover:bg-accent/90 transition"
 							>
